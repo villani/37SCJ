@@ -80,7 +80,7 @@ Resources:
        GetTripsRecordsByCity:
          Type: Api
          Properties:
-           Path: /trips/{country}/
+           Path: /trips/{country}/findByCity
            Method: get
            RequestParameters:
               - method.request.querystring.city
