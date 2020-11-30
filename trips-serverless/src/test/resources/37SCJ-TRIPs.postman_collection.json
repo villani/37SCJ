@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "b79d0185-0cfa-40de-949e-31deab216db7",
+		"name": "37SCJ-TRIPs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:3000/Prod/trips",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country\":\"uruguai\",\n    \"dateTimeCreation\":\"2020-09-01T19:55:23Z\",\n    \"city\": \"colonia_de_sacramento\",\n    \"reason\": \"trabalho\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/Prod/trips",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"Prod",
+						"trips"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/trips/uruguai/findByCity?city=colonia_de_sacramento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/trips/uruguai/findByCity?city=colonia_de_sacramento",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"trips",
+						"uruguai",
+						"findByCity"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "colonia_de_sacramento"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/trips/uruguai/findByPeriod?start=2020-09-25T19:55:23Z&end=2020-12-01T19:55:23Z",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/trips/uruguai/findByPeriod?start=2020-09-25T19:55:23Z&end=2020-12-01T19:55:23Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"trips",
+						"uruguai",
+						"findByPeriod"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2020-09-25T19:55:23Z"
+						},
+						{
+							"key": "end",
+							"value": "2020-12-01T19:55:23Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/trips/uruguai",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/trips/uruguai",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"trips",
+						"uruguai"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
