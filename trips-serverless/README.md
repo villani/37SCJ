@@ -46,7 +46,7 @@ Se não houve nenhum erro nos passos anteriores, é possível fazer uma chamada 
 Primeiro será criada uma váriavel `S3 bucket` onde será feito o upload das Lambdas.
 
 ```bash
-export BUCKET_NAME=my_cool_new_bucket
+export BUCKET_NAME=repo-demo-trips
 aws s3 mb s3://$BUCKET_NAME
 ```
 
@@ -72,6 +72,6 @@ Depois do deploy completo, pode executar o comando abaixo para obter o endereço
 
 ```bash
 aws cloudformation describe-stacks \
-    --stack-name sam-orderHandler \
+    --stack-name trips-serverless \
     --query 'Stacks[].Outputs'
 ```
