@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  bancocadastro:
+    image: mariadb
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: fiap37scj
+      MYSQL_DATABASE: cadastro_usuario
+
+  microsservicocadastro:
+    image: guimbm93/mcadastro
+    restart: always
+    ports:
+    - 8080:8080
+    depends_on:
+      - bancocadastro   
