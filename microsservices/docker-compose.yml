@@ -1,12 +1,11 @@
-version: '3.1'
+version: '3.5'
 
 services:
 
   bancocadastro:
     image: mariadb
+    container_name: bancocadastro
     restart: always
-    ports:
-      - 3307:3306
     networks:
       app_net:
         ipv4_address: 172.16.238.05  
@@ -15,7 +14,10 @@ services:
       MYSQL_DATABASE: cadastro_usuario
 
   microcadastro:
-    image: guimbm93/mcadastro:1.0.2
+    image: guimbm93/mcadastro:1.0.3
+    container_name: mcadastro
+    tty: true
+    stdin_open: true
     restart: always
     ports:
     - 8081:8080
