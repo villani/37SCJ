@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 
 export default function Edit() {
   return (
@@ -10,6 +11,7 @@ export default function Edit() {
         <Row>
             <Col>
               <h1>Edição de Usuário</h1>
+              <p><Link href="/users">Cancelar</Link></p>
               <Form>
                 <Form.Group controlId="name">
                   <Form.Label>Nome:</Form.Label>
