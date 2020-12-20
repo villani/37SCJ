@@ -18,6 +18,7 @@ public class UserController {
 
     @PostMapping()
     public ResponseEntity<?> createuser(@RequestBody UserCreateUpdateDTO userCreateUpdateDTO){
+
         return ResponseEntity.ok().body(userService.save(userCreateUpdateDTO));
     }
 

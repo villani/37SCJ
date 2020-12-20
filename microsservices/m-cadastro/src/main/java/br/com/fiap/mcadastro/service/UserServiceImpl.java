@@ -3,6 +3,7 @@ package br.com.fiap.mcadastro.service;
 import br.com.fiap.mcadastro.entity.User;
 import br.com.fiap.mcadastro.entity.dto.UserCreateUpdateDTO;
 import br.com.fiap.mcadastro.repository.UserRepository;
+import br.com.fiap.mcadastro.util.Util;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -29,7 +30,11 @@ public class UserServiceImpl implements UserService {
         user.setMaritalStatus(userCreateUpdateDTO.getMaritalStatus());
         user.setPassword(userCreateUpdateDTO.getPassword());
 
-        return userRepository.save(user);
+        if(Util.validate(user.getEmail())){
+            return userRepository.save(user);
+        }
+
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
     }
 
     @Override
@@ -57,7 +62,12 @@ public class UserServiceImpl implements UserService {
             userDB.setPassword(userCreateUpdateDTO.getPassword());
         }
 
-        return userRepository.save(userDB);
+        if(Util.validate(userDB.getEmail())){
+            return userRepository.save(userDB);
+        }
+
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+
     }
 
 
