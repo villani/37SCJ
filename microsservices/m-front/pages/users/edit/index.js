@@ -5,12 +5,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 
-export default function Edit() {
+function Edit({ usuario }) {
   return (
     <Container>
         <Row>
             <Col>
-              <h1>Edição de Usuário</h1>
+              <h1>Inserção de Usuário</h1>
               <p><Link href="/users">Cancelar</Link></p>
               <Form>
                 <Form.Group controlId="name">
@@ -60,3 +60,5 @@ export default function Edit() {
     </Container>
   )
 }
+
+export default Edit

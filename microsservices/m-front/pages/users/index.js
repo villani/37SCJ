@@ -30,7 +30,7 @@ function Home({usuarios}) {
                         <td>{usuario.id}</td>
                         <td>{usuario.name}</td>
                         <td>{usuario.email}</td>
-                        <td><Link href="/users/usuario.id">Editar</Link></td>
+                        <td><Link href={'/users/edit/' + usuario.id}>Editar</Link></td>
                         <td>Excluir</td>
                       </tr>
                     ))}    
